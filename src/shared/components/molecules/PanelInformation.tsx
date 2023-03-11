@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {Linking, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Button from '../atom/Button/Button';
 import {SvgUri} from 'react-native-svg';
@@ -7,15 +7,21 @@ import {
   blueSecondary,
   textDark,
 } from '@Shared/constants/colors';
+import {Toast} from 'react-native-toast-message/lib/src/Toast';
+import {scale} from '@Shared/helper/scaling';
 
 export interface panelInformationProps {
   textInformation: string;
-  onPress: any;
+  titleButton: string;
+  uri: string;
+  loading: boolean;
 }
 
 const PanelInformation = ({
   textInformation,
-  onPress,
+  uri,
+  titleButton,
+  loading,
 }: panelInformationProps) => {
   return (
     <View style={styles.container}>
@@ -29,12 +35,22 @@ const PanelInformation = ({
       <View style={styles.containerInformation}>
         <Text style={styles.text}>{textInformation}</Text>
       </View>
-      <View style={{}}>
+      <View
+        style={{
+          justifyContent: 'center',
+        }}>
         <Button
           type="primary"
-          title="Cek Sekarang"
+          title={titleButton}
           size="long"
-          onPress={onPress}
+          onPress={() =>
+            uri
+              ? Linking.openURL(uri)
+              : Toast.show({
+                  type: 'error',
+                  text2: 'ups terjadi kendala',
+                })
+          }
           disable={false}
         />
       </View>
@@ -74,8 +90,8 @@ const styles = StyleSheet.create({
     zIndex: -1,
   },
   text: {
-    color: textDark,
-    fontSize: 13,
-    fontFamily: 'Inter-Regular',
+    color: 'black',
+    fontSize: scale(16),
+    fontFamily: 'Inter-SemiBold',
   },
 });
