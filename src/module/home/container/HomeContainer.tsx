@@ -5,6 +5,8 @@ import {getBanner} from '../api/getBanner';
 import Toast from 'react-native-toast-message';
 import {announcementDefault, announcementProps} from '../types/announcement';
 import {getAnnouncement} from '../api/getAnnouncement';
+import {getHighlight} from '../api/getHighlights';
+import {highlightProps} from '../types/highlights';
 
 const HomeContainer = () => {
   const [dataBanner, setDataBanner] = useState<contentTypes[]>([]);
@@ -12,6 +14,8 @@ const HomeContainer = () => {
   const [dataAnnouncement, setDataAnnouncement] =
     useState<announcementProps>(announcementDefault);
   const [loadingAnnouncement, setLoadingAnnouncement] = useState<boolean>(true);
+  const [dataHighlight, setDataHiglight] = useState<highlightProps[]>([]);
+  const [loadingHighlight, setLoadingHighlight] = useState<boolean>(true);
   const fetchApiBanner = async () => {
     setLoadingBanner(true);
     let response = await getBanner();
@@ -30,8 +34,6 @@ const HomeContainer = () => {
     setLoadingAnnouncement(true);
     let response = await getAnnouncement();
     if (response.success) {
-      console.log(response.data);
-
       setDataAnnouncement(response.data);
       setLoadingAnnouncement(false);
     } else {
@@ -41,17 +43,35 @@ const HomeContainer = () => {
       });
     }
   };
+
+  const fetchHighlight = async () => {
+    let response = await getHighlight();
+    if (response.success) {
+      setDataHiglight(response.data.content);
+      console.log(response.data.content);
+      setLoadingHighlight(false);
+    } else {
+      Toast.show({
+        type: 'error',
+        text1: 'ada kendala, pastikan koneksi kamu',
+      });
+    }
+  };
   useEffect(() => {
+    fetchHighlight();
     fetchApiBanner();
     fetchAnnouncement();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <HomePresenter
       dataAnnouncement={dataAnnouncement}
+      dataBanner={dataBanner}
+      dataHighlight={dataHighlight}
+      loadingHighlight={loadingHighlight}
       loadingAnnouncement={loadingAnnouncement}
       loadingBanner={loadingBanner}
-      dataBanner={dataBanner}
     />
   );
 };
