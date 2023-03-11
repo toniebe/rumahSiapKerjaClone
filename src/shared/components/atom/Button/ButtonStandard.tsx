@@ -3,12 +3,10 @@ import {
   Text,
   TouchableOpacity,
   TouchableOpacityProps,
-  View,
 } from 'react-native';
 import React from 'react';
 import {
   bluePrimary,
-  textDark1,
   textDark2,
   textDark3,
   whiteColor,

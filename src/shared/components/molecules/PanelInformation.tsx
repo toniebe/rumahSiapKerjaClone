@@ -1,6 +1,6 @@
 import {Linking, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import Button from '../atom/Button/Button';
+import Button from '../atom/Button/ButtonStandard';
 import {SvgUri} from 'react-native-svg';
 import {blueAlternative3} from '@Shared/constants/colors';
 import {Toast} from 'react-native-toast-message/lib/src/Toast';
