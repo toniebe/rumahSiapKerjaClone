@@ -2,13 +2,10 @@ import {Linking, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Button from '../atom/Button/Button';
 import {SvgUri} from 'react-native-svg';
-import {
-  blueAlternative3,
-  blueSecondary,
-  textDark,
-} from '@Shared/constants/colors';
+import {blueAlternative3} from '@Shared/constants/colors';
 import {Toast} from 'react-native-toast-message/lib/src/Toast';
 import {scale} from '@Shared/helper/scaling';
+import Loading from '../atom/Loading';
 
 export interface panelInformationProps {
   textInformation: string;
@@ -23,7 +20,9 @@ const PanelInformation = ({
   titleButton,
   loading,
 }: panelInformationProps) => {
-  return (
+  return loading ? (
+    <Loading size="small" full={false} transparent={false} />
+  ) : (
     <View style={styles.container}>
       <View style={styles.svgTopContainer}>
         <SvgUri

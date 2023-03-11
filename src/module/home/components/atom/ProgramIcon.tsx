@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {scale, verticalScale} from '@Shared/helper/scaling';
 import {textStyle} from '@ModuleApp/home/assets/styles/textStyle';
@@ -46,5 +46,3 @@ const ProgramIcon = ({
 };
 
 export default ProgramIcon;
-
-const styles = StyleSheet.create({});

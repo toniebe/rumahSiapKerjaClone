@@ -1,16 +1,16 @@
-import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
+import {ActivityIndicator, StyleSheet, View} from 'react-native';
 import React from 'react';
 import Lottie from 'lottie-react-native';
-import LottieLoading from '@Shared/assets/Lottie/lottie-rsk-loading.json';
 import {blueAlternative3} from '@Shared/constants/colors';
 
 interface loadingProps {
   full?: boolean;
   transparent?: boolean;
+  size: 'small' | 'large' | string;
 }
 
-const Loading = ({full = false, transparent = false}: loadingProps) => {
-  return full ? (
+const Loading = ({size, full = false, transparent = false}: loadingProps) => {
+  return size !== 'small' ? (
     <View
       style={[
         full

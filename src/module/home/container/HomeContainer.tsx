@@ -1,7 +1,6 @@
-import {View, Text} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import HomePresenter from '../presenter/HomePresenter';
-import {contentTypes, payloadBanner} from '../types/bannerTypes';
+import {contentTypes} from '../types/bannerTypes';
 import {getBanner} from '../api/getBanner';
 import Toast from 'react-native-toast-message';
 import {announcementDefault, announcementProps} from '../types/announcement';

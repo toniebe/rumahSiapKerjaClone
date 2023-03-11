@@ -3,16 +3,14 @@ import {
   Image,
   Linking,
   StyleSheet,
-  Text,
   TouchableOpacity,
-  View,
 } from 'react-native';
 import React from 'react';
 import {itemBannerProps} from '@ModuleApp/home/types/bannerTypes';
 import {scale, verticalScale} from '@Shared/helper/scaling';
 import Toast from 'react-native-toast-message';
 
-const {width, height} = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 const ItemBanner = ({url, imageUrl}: itemBannerProps) => {
   const openToast = () => {
     Toast.show({

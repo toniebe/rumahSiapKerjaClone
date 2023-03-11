@@ -1,4 +1,4 @@
-import {Platform, StyleSheet, Text, View, ViewStyle} from 'react-native';
+import {Platform, View, ViewStyle} from 'react-native';
 import React, {ReactNode} from 'react';
 import {
   useSafeAreaInsets,
@@ -23,5 +23,3 @@ const LayoutScreen = ({children, style}: LayoutProps) => {
 };
 
 export default LayoutScreen;
-
-const styles = StyleSheet.create({});

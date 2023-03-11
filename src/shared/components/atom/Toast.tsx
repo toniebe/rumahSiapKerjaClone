@@ -1,5 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
-import {redText, redWarning, whiteColor} from '@Shared/constants/colors';
+import {redWarning, whiteColor} from '@Shared/constants/colors';
 import {scale} from '@Shared/helper/scaling';
 import {BaseToast, ErrorToast} from 'react-native-toast-message';
 

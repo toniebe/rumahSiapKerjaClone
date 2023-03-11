@@ -1,13 +1,7 @@
-import {bluePrimary, textDark, textDark1, textDark2, textDark3} from '@Shared/constants/colors';
+import {bluePrimary, textDark3} from '@Shared/constants/colors';
 import {scale} from '@Shared/helper/scaling';
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Animated,
-  useWindowDimensions,
-} from 'react-native';
+import {StyleSheet, View, Animated, useWindowDimensions} from 'react-native';
 
 interface PaginatorProps {
   data: any[]; // Modify data type according to your needs
