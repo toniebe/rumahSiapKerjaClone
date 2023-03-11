@@ -14,6 +14,18 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-rumahSiapKerjaClone-rumahSiapKerjaCloneTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-rumahSiapKerjaClone-rumahSiapKerjaCloneTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		CDF4CF8646764767A79F247B /* Inter-VariableFont_slnt,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB5AE16A7E594F5DA10E15E8 /* Inter-VariableFont_slnt,wght.ttf */; };
+		3A072512A0E649E098064B8C /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43A113C3C2AF4E6682ADBE51 /* Inter-Black.ttf */; };
+		203A6B854FB2436783BD3503 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C2ABC6D56474547A2999EB8 /* Inter-Bold.ttf */; };
+		C230A73227D449A3B86C00B7 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F59CE0A698644CFB5028311 /* Inter-ExtraBold.ttf */; };
+		E31FF668693E445E97E2FB8C /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37192FF6DDEE425AB7D8C4C9 /* Inter-ExtraLight.ttf */; };
+		F5EF8D7D673744C9ACD5010A /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EACBFC160352494E81EA8B05 /* Inter-Light.ttf */; };
+		F8EB0C7C249A4731B7425A74 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 884AC428D54B492F97C247A2 /* Inter-Medium.ttf */; };
+		81E5A359A81346E5887CFE41 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81438DA8678F4F04A143F10C /* Inter-Regular.ttf */; };
+		03F16FA01BA24162896DC6FF /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 889C48E8672F416EA35AD0C1 /* Inter-SemiBold.ttf */; };
+		F4665E474AA447D893F89D0E /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A91EBA7183A4172956A398F /* Inter-Thin.ttf */; };
+		FB13278150354521BF6FBDE5 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32E94822F7F2406290872A54 /* OFL.txt */; };
+		4CD02238AF9A488B854F4F1C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 98A5785995CB4E19A6799FC8 /* README.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +56,18 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = rumahSiapKerjaClone/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-rumahSiapKerjaClone-rumahSiapKerjaCloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rumahSiapKerjaClone-rumahSiapKerjaCloneTests.release.xcconfig"; path = "Target Support Files/Pods-rumahSiapKerjaClone-rumahSiapKerjaCloneTests/Pods-rumahSiapKerjaClone-rumahSiapKerjaCloneTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		DB5AE16A7E594F5DA10E15E8 /* Inter-VariableFont_slnt,wght.ttf */ = {isa = PBXFileReference; name = "Inter-VariableFont_slnt,wght.ttf"; path = "../src/shared/fonts/Inter/Inter-VariableFont_slnt,wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		43A113C3C2AF4E6682ADBE51 /* Inter-Black.ttf */ = {isa = PBXFileReference; name = "Inter-Black.ttf"; path = "../src/shared/fonts/Inter/static/Inter-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0C2ABC6D56474547A2999EB8 /* Inter-Bold.ttf */ = {isa = PBXFileReference; name = "Inter-Bold.ttf"; path = "../src/shared/fonts/Inter/static/Inter-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8F59CE0A698644CFB5028311 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Inter-ExtraBold.ttf"; path = "../src/shared/fonts/Inter/static/Inter-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		37192FF6DDEE425AB7D8C4C9 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Inter-ExtraLight.ttf"; path = "../src/shared/fonts/Inter/static/Inter-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EACBFC160352494E81EA8B05 /* Inter-Light.ttf */ = {isa = PBXFileReference; name = "Inter-Light.ttf"; path = "../src/shared/fonts/Inter/static/Inter-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		884AC428D54B492F97C247A2 /* Inter-Medium.ttf */ = {isa = PBXFileReference; name = "Inter-Medium.ttf"; path = "../src/shared/fonts/Inter/static/Inter-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		81438DA8678F4F04A143F10C /* Inter-Regular.ttf */ = {isa = PBXFileReference; name = "Inter-Regular.ttf"; path = "../src/shared/fonts/Inter/static/Inter-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		889C48E8672F416EA35AD0C1 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; name = "Inter-SemiBold.ttf"; path = "../src/shared/fonts/Inter/static/Inter-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6A91EBA7183A4172956A398F /* Inter-Thin.ttf */ = {isa = PBXFileReference; name = "Inter-Thin.ttf"; path = "../src/shared/fonts/Inter/static/Inter-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		32E94822F7F2406290872A54 /* OFL.txt */ = {isa = PBXFileReference; name = "OFL.txt"; path = "../src/shared/fonts/Inter/OFL.txt"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		98A5785995CB4E19A6799FC8 /* README.txt */ = {isa = PBXFileReference; name = "README.txt"; path = "../src/shared/fonts/Inter/README.txt"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +146,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				EA842A38DC8041C3A814E4B6 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +172,26 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		EA842A38DC8041C3A814E4B6 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				DB5AE16A7E594F5DA10E15E8 /* Inter-VariableFont_slnt,wght.ttf */,
+				43A113C3C2AF4E6682ADBE51 /* Inter-Black.ttf */,
+				0C2ABC6D56474547A2999EB8 /* Inter-Bold.ttf */,
+				8F59CE0A698644CFB5028311 /* Inter-ExtraBold.ttf */,
+				37192FF6DDEE425AB7D8C4C9 /* Inter-ExtraLight.ttf */,
+				EACBFC160352494E81EA8B05 /* Inter-Light.ttf */,
+				884AC428D54B492F97C247A2 /* Inter-Medium.ttf */,
+				81438DA8678F4F04A143F10C /* Inter-Regular.ttf */,
+				889C48E8672F416EA35AD0C1 /* Inter-SemiBold.ttf */,
+				6A91EBA7183A4172956A398F /* Inter-Thin.ttf */,
+				32E94822F7F2406290872A54 /* OFL.txt */,
+				98A5785995CB4E19A6799FC8 /* README.txt */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +289,18 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				CDF4CF8646764767A79F247B /* Inter-VariableFont_slnt,wght.ttf in Resources */,
+				3A072512A0E649E098064B8C /* Inter-Black.ttf in Resources */,
+				203A6B854FB2436783BD3503 /* Inter-Bold.ttf in Resources */,
+				C230A73227D449A3B86C00B7 /* Inter-ExtraBold.ttf in Resources */,
+				E31FF668693E445E97E2FB8C /* Inter-ExtraLight.ttf in Resources */,
+				F5EF8D7D673744C9ACD5010A /* Inter-Light.ttf in Resources */,
+				F8EB0C7C249A4731B7425A74 /* Inter-Medium.ttf in Resources */,
+				81E5A359A81346E5887CFE41 /* Inter-Regular.ttf in Resources */,
+				03F16FA01BA24162896DC6FF /* Inter-SemiBold.ttf in Resources */,
+				F4665E474AA447D893F89D0E /* Inter-Thin.ttf in Resources */,
+				FB13278150354521BF6FBDE5 /* OFL.txt in Resources */,
+				4CD02238AF9A488B854F4F1C /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,7 +621,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -598,6 +655,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -635,7 +693,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -661,6 +719,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
