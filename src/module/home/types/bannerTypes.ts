@@ -35,5 +35,6 @@ export interface itemBannerProps {
 }
 
 export interface bannerProps {
-    data: contentTypes[]
+    data: contentTypes[],
+    loading: boolean,
 }
