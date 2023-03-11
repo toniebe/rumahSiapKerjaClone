@@ -1,4 +1,4 @@
-import {bluePrimary} from '@Shared/constants/colors';
+import {bluePrimary, textDark, textDark1, textDark2, textDark3} from '@Shared/constants/colors';
 import {scale} from '@Shared/helper/scaling';
 import React from 'react';
 import {
@@ -23,19 +23,19 @@ export default function Paginator({data, scrollX}: PaginatorProps) {
         const inputRange = [(i - 1) * width, i * width, (i + 1) * width];
         const dotWidth = scrollX.interpolate({
           inputRange,
-          outputRange: [10, 30, 10],
+          outputRange: [10, 20, 10],
           extrapolate: 'clamp',
         });
 
-        const opacity = scrollX.interpolate({
+        const dotColor = scrollX.interpolate({
           inputRange,
-          outputRange: [0.3, 1, 0.3],
+          outputRange: [textDark3, bluePrimary, textDark3],
           extrapolate: 'clamp',
         });
 
         return (
           <Animated.View
-            style={[styles.dot, {width: dotWidth, opacity}]}
+            style={[styles.dot, {width: dotWidth, backgroundColor: dotColor}]}
             key={i.toString()}
           />
         );
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     height: 10,
     borderRadius: 5,
     backgroundColor: bluePrimary,
-    marginHorizontal: scale(5),
+    marginHorizontal: scale(4),
     marginVertical: scale(10),
   },
 });
