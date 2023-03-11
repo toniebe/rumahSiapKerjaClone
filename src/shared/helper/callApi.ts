@@ -2,11 +2,12 @@ import {Toast} from 'react-native-toast-message/lib/src/Toast';
 import {BASE_URL} from '@env';
 
 export async function callApi<T>(
+  version: string,
   url: string,
   method: string,
   body?: any,
 ): Promise<T> {
-  const response = await fetch(`${BASE_URL}/${url}`, {
+  const response = await fetch(`${BASE_URL}/${version}/${url}`, {
     method,
     headers: {
       'Content-Type': 'application/json',
