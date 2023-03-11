@@ -1,15 +1,16 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Lottie from 'lottie-react-native';
 import LottieLoading from '@Shared/assets/Lottie/lottie-rsk-loading.json';
+import {blueAlternative3} from '@Shared/constants/colors';
 
 interface loadingProps {
-  full: boolean;
-  transparent: boolean;
+  full?: boolean;
+  transparent?: boolean;
 }
 
-const Loading = ({full = true, transparent = false}: loadingProps) => {
-  return (
+const Loading = ({full = false, transparent = false}: loadingProps) => {
+  return full ? (
     <View
       style={[
         full
@@ -28,6 +29,8 @@ const Loading = ({full = true, transparent = false}: loadingProps) => {
         loop
       />
     </View>
+  ) : (
+    <ActivityIndicator size={'small'} color={blueAlternative3} />
   );
 };
 
