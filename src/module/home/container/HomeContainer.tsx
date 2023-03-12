@@ -10,13 +10,16 @@ import {highlightProps} from '../types/highlights';
 import {categoryList} from '../data/categoryMock';
 import {dataCategoryProps, programProps} from '../types/randomProgram';
 import {getRandomProgram} from '../api/getRandomProgram';
+import {sectionHeader} from '../types/programStructure';
+import {getHeaderProgram} from '../api/getHeaderProgram';
+import {navigationProps} from '@Shared/Types/navigationProps';
+import NavigationHomeHeader from '../components/atom/NavigationHomeHeader';
 
-const HomeContainer = () => {
+const HomeContainer = ({navigation}: navigationProps) => {
   const [dataBanner, setDataBanner] = useState<contentTypes[]>([]);
   const [loadingBanner, setLoadingBanner] = useState<boolean>(true);
   const [dataAnnouncement, setDataAnnouncement] =
     useState<announcementProps>(announcementDefault);
-  const [loadingAnnouncement, setLoadingAnnouncement] = useState<boolean>(true);
   const [dataHighlight, setDataHiglight] = useState<highlightProps[]>([]);
   const [loadingHighlight, setLoadingHighlight] = useState<boolean>(true);
   const [dataListCategory, setDataListCategory] =
@@ -28,6 +31,8 @@ const HomeContainer = () => {
   );
   const [loadingRandomProgram, setLoadingRandomProgram] =
     useState<boolean>(true);
+
+  const [dataHeader, setDataHeader] = useState<sectionHeader[]>([]);
 
   const fetchApiBanner = async () => {
     setLoadingBanner(true);
@@ -44,11 +49,9 @@ const HomeContainer = () => {
   };
 
   const fetchAnnouncement = async () => {
-    setLoadingAnnouncement(true);
     let response = await getAnnouncement();
     if (response.success) {
       setDataAnnouncement(response.data);
-      setLoadingAnnouncement(false);
     } else {
       Toast.show({
         type: 'error',
@@ -61,7 +64,6 @@ const HomeContainer = () => {
     setLoadingRandomProgram(true);
     let response = await getRandomProgram({category: categoryCode});
     if (response.success) {
-      // console.log(response.data.content);
       setDataRandomProgram(response.data.content);
       setLoadingRandomProgram(false);
     } else {
@@ -76,7 +78,6 @@ const HomeContainer = () => {
     let response = await getHighlight();
     if (response.success) {
       setDataHiglight(response.data.content);
-      console.log(response.data.content);
       setLoadingHighlight(false);
     } else {
       Toast.show({
@@ -106,9 +107,23 @@ const HomeContainer = () => {
 
     setDataListCategory(updatedCategoryList);
   }
+
+  const fetchDataHeader = async () => {
+    let response = await getHeaderProgram();
+    if (response.success) {
+      setDataHeader(response.data);
+    } else {
+      Toast.show({
+        type: 'error',
+        text1: 'ada kendala, pastikan koneksi kamu',
+      });
+    }
+  };
+
   useEffect(() => {
     fetchHighlight();
     fetchApiBanner();
+    fetchDataHeader();
     fetchAnnouncement();
   }, []);
 
@@ -117,20 +132,34 @@ const HomeContainer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [categoryCode]);
 
+  useEffect(() => {
+    navigation.setOptions({
+      header: () => (
+        <NavigationHomeHeader panelData={dataAnnouncement} loading={false} />
+      ),
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dataAnnouncement]);
+
   return (
     <HomePresenter
-      dataAnnouncement={dataAnnouncement}
       dataBanner={dataBanner}
       dataHighlight={dataHighlight}
       dataCategory={dataListCategory}
       loadingHighlight={loadingHighlight}
-      loadingAnnouncement={loadingAnnouncement}
       loadingBanner={loadingBanner}
       handleCategorySelection={(value: string) =>
         handleCategorySelection(value)
       }
       dataProgram={dataRandomProgram}
       loadingProgram={loadingRandomProgram}
+      dataHeader={dataHeader}
+      actionSeeAll={(value: any) =>
+        navigation.navigate('DetailSection', {id: value})
+      }
+      actionCard={(value: any) =>
+        navigation.navigate('DetailProduct', {itemId: value})
+      }
     />
   );
 };
