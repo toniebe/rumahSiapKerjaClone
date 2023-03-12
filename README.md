@@ -9,11 +9,15 @@ Rumah Siap Kerja Clone Apps is an application clone of **Rumah Siap Kerja**, spe
 
 # Preview
 
+<div>
 Preview of iOS using an iPhone SE 3rd generation emulator
-<img src="/asset/ios.png" width="200" height="400" />
-Preview of Android using an Nexus 6 emulator.
-<img src="/asset/android.png" width="200" height="400" />
+<img src="/assets/ios.png" width="200" height="400" />
+</div>
 <br/>
+<div>
+Preview of Android using an Nexus 6 emulator.
+<img src="/assets/android.png" width="200" height="400" />
+</div>
 
 # Used libraries:
 
