@@ -31,7 +31,7 @@ const Banner = ({data, loading}: bannerProps) => {
         snapToAlignment={'center'}
         decelerationRate={'normal'}
       />
-      <View style={{paddingHorizontal: scale(10)}}>
+      <View style={{paddingHorizontal: scale(20)}}>
         <Paginator data={data} scrollX={scrollX} />
       </View>
     </View>

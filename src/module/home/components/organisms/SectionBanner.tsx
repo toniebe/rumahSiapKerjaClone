@@ -23,7 +23,9 @@ const SectionBanner = ({dataBanner, loading}: sectionBannerProps) => {
     <Section>
       <Banner data={dataBanner} loading={loading} />
       <View>
-        <Text style={[textStyle.titleSection]}>Solusi Program Terlengkap</Text>
+        <Text style={[textStyle.titleSection, {marginHorizontal: scale(20)}]}>
+          Solusi Program Terlengkap
+        </Text>
         <View style={styles.programContainer}>
           <ProgramIcon
             source={require('@ModuleApp/home/assets/icons/Pja.png')}

@@ -6,6 +6,7 @@ import Paginator from '@Shared/components/atom/Paginator';
 import {FlatList} from 'react-native-gesture-handler';
 import ItemHighlights from '../atom/ItemHighlights';
 import {scale} from '@Shared/helper/scaling';
+import {whiteColor} from '@Shared/constants/colors';
 
 interface highlightListProps {
   data: highlightProps[];
@@ -17,7 +18,7 @@ const HiglightList = ({data, loading}: highlightListProps) => {
   return loading ? (
     <Loading size="small" />
   ) : (
-    <View>
+    <View style={{backgroundColor: whiteColor}}>
       <FlatList
         data={data}
         horizontal={true}
@@ -46,7 +47,7 @@ const HiglightList = ({data, loading}: highlightListProps) => {
         snapToAlignment={'center'}
         decelerationRate={'normal'}
       />
-      <View style={{paddingHorizontal: scale(10)}}>
+      <View style={{paddingHorizontal: scale(20)}}>
         <Paginator data={data} scrollX={scrollX} />
       </View>
     </View>
