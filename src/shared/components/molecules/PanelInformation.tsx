@@ -37,6 +37,7 @@ const PanelInformation = ({
       <View
         style={{
           justifyContent: 'center',
+          flex: 1,
         }}>
         <Button
           type="primary"

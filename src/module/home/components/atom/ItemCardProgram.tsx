@@ -1,4 +1,10 @@
-import {ImageBackground, StyleSheet, Text, View} from 'react-native';
+import {
+  ImageBackground,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
 import ItemProductType from './ItemProductType';
 import {scale, verticalScale} from '@Shared/helper/scaling';
@@ -19,6 +25,7 @@ interface itemCardProgramProps {
   price: number;
   originalPrice?: number;
   participants?: number;
+  actionCard?: any;
 }
 
 const ItemCardProgram = ({
@@ -32,9 +39,10 @@ const ItemCardProgram = ({
   originalPrice,
   rating,
   participants,
+  actionCard,
 }: itemCardProgramProps) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={actionCard}>
       <ImageBackground
         source={{
           uri: imageUrl,
@@ -48,6 +56,8 @@ const ItemCardProgram = ({
         imageStyle={{
           height: 100,
           resizeMode: 'cover',
+          borderTopLeftRadius: 8,
+          borderTopRightRadius: 8,
         }}>
         <View
           style={{
@@ -76,7 +86,7 @@ const ItemCardProgram = ({
       <View style={[styles.contentContainer, {justifyContent: 'flex-end'}]}>
         <ItemPrice price={price} originalPrice={originalPrice} />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -86,6 +96,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginHorizontal: scale(10),
+    marginVertical: verticalScale(5),
     backgroundColor: whiteColor,
     maxWidth: scale(300),
     minWidth: scale(250),
@@ -97,7 +108,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 3.84,
     elevation: 1,
-    borderRadius: 4,
+    borderRadius: 6,
   },
   contentContainer: {
     flex: 1,

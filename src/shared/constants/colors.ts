@@ -14,6 +14,7 @@ const redText = '#fd6767';
 const yellowPrimary = '#fcca4d';
 const greenPrimary = '#2ccb64';
 const purplePrimary = '#4e41b3';
+const grey1 = '#c8c8c8';
 
 export {
   bluePrimary,
@@ -32,4 +33,5 @@ export {
   yellowPrimary,
   greenPrimary,
   purplePrimary,
+  grey1,
 };

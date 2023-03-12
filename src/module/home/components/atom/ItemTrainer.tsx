@@ -13,19 +13,23 @@ export interface itemTrainerProps {
 const ItemTrainer = ({
   hostName = 'Rumah Siap Kerja',
   trainerName = 'Miswanto',
-  imageUrl = 'https://cdn2.rumahsiapkerja.com/user-profile-images/4177aa01-3e93-47f5-8cee-986aa3e8ce391659023952466.jpg',
+  imageUrl,
 }: itemTrainerProps) => {
   return (
     <View style={styles.container}>
       <Image
-        source={{
-          uri: imageUrl,
-        }}
+        source={
+          imageUrl
+            ? {
+                uri: imageUrl,
+              }
+            : require('@Shared/assets/icon/imageNotFound.png')
+        }
         style={styles.image}
       />
       <View style={{marginLeft: scale(6)}}>
         <View style={{flexDirection: 'row'}}>
-          <Text style={[textStyle.textGrey, {fontWeight: '400'}]}>by</Text>
+          <Text style={[textStyle.textGrey, {fontWeight: '400'}]}>by </Text>
           <Text
             numberOfLines={2}
             style={[

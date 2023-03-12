@@ -1,21 +1,25 @@
 import {Platform, View, ViewStyle} from 'react-native';
 import React, {ReactNode} from 'react';
 import {
-  useSafeAreaInsets,
   SafeAreaProvider,
+  useSafeAreaInsets,
 } from 'react-native-safe-area-context';
 
 interface LayoutProps {
   children: ReactNode;
+  saveArea?: boolean;
   style?: ViewStyle;
 }
 
-const LayoutScreen = ({children, style}: LayoutProps) => {
+const LayoutScreen = ({children, style, saveArea = true}: LayoutProps) => {
   const insets = useSafeAreaInsets();
   return (
     <SafeAreaProvider>
       <View
-        style={[style, {paddingTop: Platform.OS === 'ios' ? insets.top : 0}]}>
+        style={[
+          style,
+          saveArea && Platform.OS === 'ios' && {paddingTop: insets.top},
+        ]}>
         {children}
       </View>
     </SafeAreaProvider>

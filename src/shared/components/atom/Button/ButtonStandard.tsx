@@ -1,4 +1,5 @@
 import {
+  Image,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -11,6 +12,7 @@ import {
   textDark3,
   whiteColor,
 } from '@Shared/constants/colors';
+import {scale} from '@Shared/helper/scaling';
 
 interface ButtonProps {
   title: string;
@@ -19,6 +21,7 @@ interface ButtonProps {
   disable?: boolean;
   customStyle?: any;
   customTextStyle?: any;
+  iconUrl?: any;
 }
 
 const Button = ({
@@ -28,6 +31,7 @@ const Button = ({
   disable = false,
   customStyle,
   customTextStyle,
+  iconUrl,
   ...nativeProps
 }: ButtonProps & TouchableOpacityProps) => {
   type = type.toLowerCase();
@@ -64,6 +68,7 @@ const Button = ({
         ]}>
         {title}
       </Text>
+      {iconUrl ? <Image source={iconUrl} style={[styles.image]} /> : null}
     </TouchableOpacity>
   );
 };
@@ -72,10 +77,12 @@ export default Button;
 
 const styles = StyleSheet.create({
   container: {
+    flexDirection: 'row',
     paddingVertical: 10,
     paddingHorizontal: 10,
     borderRadius: 4,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   containerDisable: {
     backgroundColor: textDark3,
@@ -103,6 +110,13 @@ const styles = StyleSheet.create({
     color: textDark2,
     fontSize: 14,
     fontWeight: '600',
+  },
+  image: {
+    width: scale(20),
+    height: scale(20),
+    resizeMode: 'contain',
+    marginLeft: scale(8),
+    tintColor: bluePrimary,
   },
 });
 

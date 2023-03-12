@@ -3,7 +3,7 @@ import React from 'react';
 import {toRupiahFormat} from '@Shared/helper/formatRupiah';
 import {calculateDiscount} from '@Shared/helper/calculateDiscount';
 import {scale} from '@Shared/helper/scaling';
-import {textDark} from '@Shared/constants/colors';
+import {greenPrimary, textDark} from '@Shared/constants/colors';
 
 export interface itemPriceProps {
   originalPrice?: number;
@@ -26,7 +26,9 @@ const ItemPrice = ({originalPrice, price}: itemPriceProps) => {
         </View>
       ) : null}
 
-      <Text style={styles.price}>{toRupiahFormat(price)}</Text>
+      <Text style={[price === 0 ? styles.freePrice : styles.price]}>
+        {price === 0 ? 'Gratis' : toRupiahFormat(price)}
+      </Text>
     </View>
   );
 };
@@ -58,6 +60,11 @@ const styles = StyleSheet.create({
   price: {
     fontFamily: 'Inter-SemiBold',
     color: textDark,
+    fontSize: scale(16),
+  },
+  freePrice: {
+    fontFamily: 'Inter-SemiBold',
+    color: greenPrimary,
     fontSize: scale(16),
   },
 });
