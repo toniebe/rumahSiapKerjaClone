@@ -17,6 +17,8 @@ interface ButtonProps {
   type: string;
   size: string;
   disable?: boolean;
+  customStyle?: any;
+  customTextStyle?: any;
 }
 
 const Button = ({
@@ -24,6 +26,8 @@ const Button = ({
   type = 'primary',
   size = 'long',
   disable = false,
+  customStyle,
+  customTextStyle,
   ...nativeProps
 }: ButtonProps & TouchableOpacityProps) => {
   type = type.toLowerCase();
@@ -41,10 +45,11 @@ const Button = ({
                   : styles.containerSecondary,
               ],
             ],
-
-        {
-          width: size === 'long' ? '100%' : '50%',
-        },
+        customStyle
+          ? customStyle
+          : {
+              width: size === 'long' ? '100%' : '50%',
+            },
       ]}
       disabled={disable}
       {...nativeProps}>
@@ -55,6 +60,7 @@ const Button = ({
             : type === 'primary'
             ? styles.textPrimary
             : styles.textSecondary,
+          customTextStyle,
         ]}>
         {title}
       </Text>
