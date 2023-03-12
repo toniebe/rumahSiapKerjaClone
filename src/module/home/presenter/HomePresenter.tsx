@@ -1,58 +1,70 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import LayoutScreen from '@Shared/components/organisms/LayoutScreen';
-import PanelInformation from '@Shared/components/molecules/PanelInformation';
 import {contentTypes} from '../types/bannerTypes';
 import SectionBanner from '../components/organisms/SectionBanner';
-import {announcementProps} from '../types/announcement';
 import {highlightProps} from '../types/highlights';
 import {dataCategoryProps, programProps} from '../types/randomProgram';
 import SectionHighlight from '../components/organisms/SectionHighlight';
-import {ScrollView} from 'react-native';
+import {FlatList} from 'react-native';
 import SectionRandomProgram from '../components/organisms/SectionRandomProgram';
+import {sectionHeader} from '../types/programStructure';
+import ListHeader from '../components/organisms/ListHeader';
 
 export interface homePresenterProps {
-  dataAnnouncement: announcementProps;
   dataBanner: contentTypes[];
   dataHighlight: highlightProps[];
   dataCategory: dataCategoryProps[];
   dataProgram: programProps[];
+  dataHeader: sectionHeader[];
   loadingHighlight: boolean;
   loadingBanner: boolean;
-  loadingAnnouncement: boolean;
   loadingProgram: boolean;
   handleCategorySelection?: any;
+  actionSeeAll?: any;
+  actionCard?: any;
 }
 
 const HomePresenter = ({
-  dataAnnouncement,
   dataBanner,
   dataHighlight,
   dataCategory,
   dataProgram,
+  dataHeader,
   loadingBanner,
-  loadingAnnouncement,
   loadingHighlight,
   loadingProgram,
   handleCategorySelection,
+  actionSeeAll,
+  actionCard,
 }: homePresenterProps) => {
   return (
-    <LayoutScreen style={{flex: 1}}>
-      <PanelInformation
-        textInformation={dataAnnouncement.description}
-        titleButton={dataAnnouncement.callToAction}
-        uri={dataAnnouncement.url}
-        loading={loadingAnnouncement}
+    <LayoutScreen saveArea={false}>
+      <FlatList
+        ListHeaderComponent={() => (
+          <Fragment>
+            <SectionBanner loading={loadingBanner} dataBanner={dataBanner} />
+            {dataHighlight.length > 0 && (
+              <SectionHighlight
+                data={dataHighlight}
+                loading={loadingHighlight}
+              />
+            )}
+          </Fragment>
+        )}
+        data={['1']}
+        renderItem={() => (
+          <SectionRandomProgram
+            actionCard={actionCard}
+            loading={loadingProgram}
+            dataCategory={dataCategory}
+            dataProgram={dataProgram}
+            handleCategory={handleCategorySelection}
+          />
+        )}
+        ListFooterComponent={() => (
+          <ListHeader data={dataHeader} actionSeeAll={actionSeeAll} />
+        )}
       />
-      <ScrollView>
-        <SectionBanner loading={loadingBanner} dataBanner={dataBanner} />
-        <SectionHighlight data={dataHighlight} loading={loadingHighlight} />
-        <SectionRandomProgram
-          loading={loadingProgram}
-          dataCategory={dataCategory}
-          dataProgram={dataProgram}
-          handleCategory={handleCategorySelection}
-        />
-      </ScrollView>
     </LayoutScreen>
   );
 };
