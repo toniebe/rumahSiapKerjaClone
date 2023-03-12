@@ -32,7 +32,7 @@ export default ItemBanner;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: scale(10),
+    paddingHorizontal: scale(20),
     paddingVertical: verticalScale(10),
     alignItems: 'center',
   },

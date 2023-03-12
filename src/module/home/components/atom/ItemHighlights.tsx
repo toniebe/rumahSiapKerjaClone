@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: whiteColor,
     paddingVertical: verticalScale(10),
-    paddingHorizontal: scale(10),
+    paddingHorizontal: scale(20),
     width: width,
     justifyContent: 'space-around',
   },
