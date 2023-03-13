@@ -4,6 +4,7 @@ import Section from '@Shared/components/organisms/Section';
 import {scale, verticalScale} from '@Shared/helper/scaling';
 import {textStyle} from '@ModuleApp/home/assets/styles/textStyle';
 import ItemTrainingSpec from '../atoms/ItemTrainingSpec';
+import RenderHTML from 'react-native-render-html';
 
 interface SectionHeaderDetailProps {
   bannerUrl?: any;
@@ -36,7 +37,11 @@ const SectionHeaderDetail = ({
           {titleSection}
         </Text>
         {description ? (
-          <Text style={textStyle.textDescription}>{description}</Text>
+          <RenderHTML
+            source={{
+              html: description,
+            }}
+          />
         ) : null}
         <ItemTrainingSpec
           type="button"
