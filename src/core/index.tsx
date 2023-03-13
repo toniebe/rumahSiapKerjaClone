@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SplashContainer from './SplashScreen/container/SplashContainer';
 import BottomRouter from './router/BottomRouter';
+import DetailTrainingContainer from '@ModuleApp/detailTraining/container/DetailTrainingContainer';
 
 const Core = () => {
   const Stack = createNativeStackNavigator();
@@ -15,6 +16,13 @@ const Core = () => {
           }}
           name="SplashScreen"
           component={SplashContainer}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="DetailTraining"
+          component={DetailTrainingContainer}
         />
         <Stack.Screen
           name="Dashboard"

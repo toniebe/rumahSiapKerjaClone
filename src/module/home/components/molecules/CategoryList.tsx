@@ -1,7 +1,7 @@
 import React from 'react';
 import {FlatList} from 'react-native-gesture-handler';
 import {dataCategoryProps} from '@ModuleApp/home/types/randomProgram';
-import ButtonCategory from '../atom/ButtonCategory';
+import ButtonCategory from '../../../../shared/components/atom/Button/ButtonCategory';
 
 interface categoryListProps {
   data: dataCategoryProps[];

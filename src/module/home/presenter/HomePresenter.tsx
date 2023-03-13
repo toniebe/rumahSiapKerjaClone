@@ -22,6 +22,7 @@ export interface homePresenterProps {
   handleCategorySelection?: any;
   actionSeeAll?: any;
   actionCard?: any;
+  onPressItem: any;
 }
 
 const HomePresenter = ({
@@ -36,6 +37,7 @@ const HomePresenter = ({
   handleCategorySelection,
   actionSeeAll,
   actionCard,
+  onPressItem,
 }: homePresenterProps) => {
   return (
     <LayoutScreen saveArea={false}>
@@ -62,7 +64,11 @@ const HomePresenter = ({
           />
         )}
         ListFooterComponent={() => (
-          <ListHeader data={dataHeader} actionSeeAll={actionSeeAll} />
+          <ListHeader
+            data={dataHeader}
+            actionSeeAll={actionSeeAll}
+            onPressItem={onPressItem}
+          />
         )}
       />
     </LayoutScreen>

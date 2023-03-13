@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, TouchableOpacityProps} from 'react-native';
 import React from 'react';
 import Button from '@Shared/components/atom/Button/ButtonStandard';
 import {
@@ -10,13 +10,19 @@ import {
 import {scale, verticalScale} from '@Shared/helper/scaling';
 
 export interface buttonCategoryProps {
-  title: string;
+  title?: string;
   categoryCode: string;
   isActive: boolean;
   onPress?: any;
+  customFontStyle?: any;
 }
 
-const ButtonCategory = ({title, isActive, onPress}: buttonCategoryProps) => {
+const ButtonCategory = ({
+  title,
+  isActive,
+  onPress,
+  customFontStyle,
+}: buttonCategoryProps & TouchableOpacityProps) => {
   return (
     <Button
       size="short"
@@ -26,7 +32,10 @@ const ButtonCategory = ({title, isActive, onPress}: buttonCategoryProps) => {
         styles.buttonContainer,
         !isActive ? styles.buttonInActive : styles.buttonActive,
       ]}
-      customTextStyle={[!isActive ? styles.textInActive : styles.textActive]}
+      customTextStyle={[
+        customFontStyle,
+        !isActive ? styles.textInActive : styles.textActive,
+      ]}
       onPress={onPress}
     />
   );

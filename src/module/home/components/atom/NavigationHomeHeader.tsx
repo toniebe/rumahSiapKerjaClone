@@ -1,4 +1,10 @@
-import {Image, Platform, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {
+  Image,
+  Platform,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
 import TextInputCustom from '@Shared/components/atom/TextInputCustom';
 import PanelInformation from '@Shared/components/molecules/PanelInformation';

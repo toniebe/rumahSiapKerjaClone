@@ -15,7 +15,7 @@ import {
 import {scale} from '@Shared/helper/scaling';
 
 interface ButtonProps {
-  title: string;
+  title?: string;
   type: string;
   size: string;
   disable?: boolean;
@@ -25,7 +25,7 @@ interface ButtonProps {
 }
 
 const Button = ({
-  title = 'titleButton',
+  title,
   type = 'primary',
   size = 'long',
   disable = false,

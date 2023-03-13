@@ -155,11 +155,15 @@ const HomeContainer = ({navigation}: navigationProps) => {
       loadingProgram={loadingRandomProgram}
       dataHeader={dataHeader}
       actionSeeAll={(value: any) =>
-        navigation.navigate('DetailSection', {id: value})
+        navigation.navigate('DetailTraining', {itemId: value})
       }
       actionCard={(value: any) =>
-        navigation.navigate('DetailProduct', {itemId: value})
+        navigation.navigate('DetailTraining', {itemId: value})
       }
+      onPressItem={(value: any) => {
+        navigation.navigate('DetailTraining', {itemId: value});
+        console.log(value);
+      }}
     />
   );
 };
