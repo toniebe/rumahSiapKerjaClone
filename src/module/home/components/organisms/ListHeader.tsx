@@ -2,7 +2,6 @@ import React from 'react';
 import DynamicList from '../atom/DynamicList';
 import ItemSectionHeader from './ItemSectionHeader';
 import {sectionHeader} from '@ModuleApp/home/types/programStructure';
-import {TouchableOpacity} from 'react-native';
 
 interface listHeaderProps {
   actionSeeAll: any;
@@ -13,14 +12,13 @@ interface listHeaderProps {
 const ListHeader = ({actionSeeAll, data, onPressItem}: listHeaderProps) => {
   function renderItem({item}: {item: sectionHeader}): React.ReactElement {
     return (
-      <TouchableOpacity onPress={() => onPressItem(item.id)}>
-        <ItemSectionHeader
-          dataSection={item.headerDetails}
-          actionSeeAll={() => actionSeeAll(item.id)}
-          description={item.description}
-          title={item.name}
-        />
-      </TouchableOpacity>
+      <ItemSectionHeader
+        dataSection={item.headerDetails}
+        actionSeeAll={() => actionSeeAll(item.id)}
+        description={item.description}
+        title={item.name}
+        onPressItem={onPressItem}
+      />
     );
   }
   return <DynamicList data={data} horizontal={false} renderItem={renderItem} />;
