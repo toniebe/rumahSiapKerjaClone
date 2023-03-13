@@ -12,7 +12,6 @@ Rumah Siap Kerja Clone Apps is an application clone of **Rumah Siap Kerja**, spe
 ![Preview of iOS using an iPhone SE 3rd generation emulator](/assets/ios.png)
 ![Preview of Android using an Nexus 6 emulator](/assets/android.png)
 
-
 # Used libraries:
 
 1. [React Navigation](https://reactnavigation.org/).
@@ -20,6 +19,7 @@ Rumah Siap Kerja Clone Apps is an application clone of **Rumah Siap Kerja**, spe
 3. [Lottie React Native](https://github.com/lottie-react-native/lottie-react-native)
 4. [React Native Ratings](https://www.npmjs.com/package/react-native-ratings)
 5. [babel plugin module resolver](https://github.com/tleunen/babel-plugin-module-resolver#readme)
+6. [React-Native-Render-HTML](https://meliorence.github.io/react-native-render-html/)
 
 # Author
 
