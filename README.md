@@ -30,7 +30,8 @@ Rumah Siap Kerja Clone Apps is an application clone of **Rumah Siap Kerja**, spe
 1. clone the repository with command `git clone https://github.com/toniebe/rumahSiapKerjaClone.git`
 2. install all dependencies with command `yarn install` or `npm install` and command `cd ios && pod install` for ios
 3. link asset to native project with command `npx react-native-asset`
-4. run application with command `yarn android` or `yarn ios`
+4. create `.env` with variable BASE_URL `https://app.rumahsiapkerja.com/rsk-backend`
+5. run application with command `yarn android` or `yarn ios`
 
 **Notes**:
 
