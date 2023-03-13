@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {textStyle} from '@ModuleApp/home/assets/styles/textStyle';
 import {headerDetailsProps} from '@ModuleApp/home/types/programStructure';
@@ -13,6 +13,7 @@ export interface itemSectionHeaderProps {
   description?: string;
   dataSection: headerDetailsProps[];
   actionSeeAll: any;
+  onPressItem: any;
 }
 
 const ItemSectionHeader = ({
@@ -20,23 +21,26 @@ const ItemSectionHeader = ({
   description,
   actionSeeAll,
   dataSection,
+  onPressItem,
 }: itemSectionHeaderProps) => {
   function renderItem({item}: {item: headerDetailsProps}): React.ReactElement {
     return (
-      <ItemCardProgram
-        hostName={
-          item?.host?.fullName ? item.host.fullName : 'Rumah Siap Kerja'
-        }
-        imageUrl={item?.thumbnailUrl}
-        price={item.plans[0].price}
-        originalPrice={item.plans[0].originalPrice}
-        productType={item.productType}
-        title={item.title}
-        trainerImageUrl={item.coaches[0].profileImage}
-        trainerName={item.coaches[0].name}
-        rating={item.currentRating}
-        participants={item.participants}
-      />
+      <TouchableOpacity onPress={() => onPressItem(item.itemId)}>
+        <ItemCardProgram
+          hostName={
+            item?.host?.fullName ? item.host.fullName : 'Rumah Siap Kerja'
+          }
+          imageUrl={item?.thumbnailUrl}
+          price={item.plans[0].price}
+          originalPrice={item.plans[0].originalPrice}
+          productType={item.productType}
+          title={item.title}
+          trainerImageUrl={item.coaches[0].profileImage}
+          trainerName={item.coaches[0].name}
+          rating={item.currentRating}
+          participants={item.participants}
+        />
+      </TouchableOpacity>
     );
   }
   return (
