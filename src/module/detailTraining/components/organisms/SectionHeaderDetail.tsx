@@ -59,7 +59,7 @@ const SectionHeaderDetail = ({
           iconUrl={require('@Shared/assets/icon/level-up.png')}
         />
         <ItemTrainingSpec
-          type="button"
+          type="text"
           title={'Lokasi'}
           titleButton={location}
           iconUrl={require('@Shared/assets/icon/location.png')}

@@ -154,8 +154,11 @@ const HomeContainer = ({navigation}: navigationProps) => {
       dataProgram={dataRandomProgram}
       loadingProgram={loadingRandomProgram}
       dataHeader={dataHeader}
-      actionSeeAll={(value: any) =>
-        navigation.navigate('DetailTraining', {itemId: value})
+      actionSeeAll={() =>
+        Toast.show({
+          type: 'error',
+          text2: 'Ups Maaf fitur ini belum tersedia',
+        })
       }
       actionCard={(value: any) =>
         navigation.navigate('DetailTraining', {itemId: value})

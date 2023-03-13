@@ -4,10 +4,11 @@ import {Toast} from 'react-native-toast-message/lib/src/Toast';
 import {getDetailTrainingById} from '../api/getDetailTrainingById';
 import NavigationHeaderDetail from '../components/atoms/NavigationHeaderDetail';
 import DetailTrainingPresenter from '../presenter/DetailTrainingPresenter';
+import {dataDetailTrainingProps} from '../types/detailTrainingTypes';
 
 const DetailTrainingContainer = ({navigation, route}: navigationProps) => {
   const {itemId}: any = route?.params;
-  const [dataDetail, setDataDetail] = useState<any>();
+  const [dataDetail, setDataDetail] = useState<dataDetailTrainingProps>();
   const [loadingDetail, setLoadingDetail] = useState<boolean>(true);
 
   const fetchDataTrainingDetailByID = async () => {
@@ -38,9 +39,12 @@ const DetailTrainingContainer = ({navigation, route}: navigationProps) => {
 
   useEffect(() => {
     fetchDataTrainingDetailByID();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <DetailTrainingPresenter data={dataDetail} loading={loadingDetail} />;
+  return (
+    <DetailTrainingPresenter dataDetail={dataDetail} loading={loadingDetail} />
+  );
 };
 
 export default DetailTrainingContainer;
